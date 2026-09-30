@@ -55,8 +55,8 @@ Dieses Dokument hält fest, was bereits entschieden ist. Offene Punkte stehen am
 
 ## Offen
 
-- [ ] Modulhandbücher Rottenburg und Freiburg recherchieren → Themenliste mit Gewichtung
+- [x] Modulhandbücher Rottenburg und Freiburg recherchiert → `studium-vergleich.html`
 - [ ] Berufsliste recherchieren, jeweils mit dem nötigen Abschluss
-- [ ] Forstorganisation in Baden-Württemberg recherchieren (ForstBW, untere Forstbehörden, Regierungspräsidien, Ministerium, FVA)
+- [x] Forstorganisation und Laufbahnen in BW recherchiert. Wichtig: kein Referendariat bzw. keine Anwärterzeit, sondern für beide Laufbahnen das 24-monatige **Traineeprogramm Forst**
 - [ ] Kernschleife ausformulieren: Was tust du in einer typischen Spielstunde?
 - [ ] Technik festlegen (Browser-Spiel auf dem PC)
