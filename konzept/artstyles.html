@@ -1,0 +1,283 @@
+<title>Waldland Stilproben</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500;700&family=Alegreya+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: eine ruhige Spalte, Stilproben als große Bildtafeln, Vergleiche als schmale Karten-Reihen */
+:root{
+  --bg:#eceee6; --card:#f8f9f4; --fg:#1d2a22; --muted:#56655a; --line:#cdd5c6; --accent:#2f6b3a; --ok:#2f6b3a; --bad:#9a3b2a;
+  --f-display:"Alegreya",Georgia,serif; --f-body:"Alegreya Sans",system-ui,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#131915;--card:#1b231e;--fg:#e2e8de;--muted:#9aa89d;--line:#2f3b33;--accent:#8cc48f;--ok:#8cc48f;--bad:#e59a86;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#131915;--card:#1b231e;--fg:#e2e8de;--muted:#9aa89d;--line:#2f3b33;--accent:#8cc48f;--ok:#8cc48f;--bad:#e59a86;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:17px/1.55 var(--f-body)}
+.wrap{max-width:980px;margin:0 auto;padding:40px 16px 80px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:2.4rem}
+h2{font-size:1.7rem}
+h3{font-size:1.25rem}
+p{margin:0;max-width:65ch}
+.eyebrow{font:500 .78rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+header{display:flex;flex-direction:column;gap:12px}
+section{display:flex;flex-direction:column;gap:20px}
+.style{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:24px;align-items:start;padding-top:24px;border-top:1px solid var(--line)}
+.style canvas{width:100%;height:auto;display:block;border-radius:6px;image-rendering:auto}
+.style canvas.px{image-rendering:pixelated}
+.meta{display:flex;flex-direction:column;gap:10px;min-width:0}
+.tag{font:500 .8rem var(--f-mono);color:var(--accent)}
+dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:.95rem}
+dt{color:var(--muted)}
+dd{margin:0}
+.row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.row.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.card .lbl{font:500 .78rem var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.opts{display:flex;flex-direction:column;gap:6px}
+.opts button{font:inherit;font-size:.95rem;text-align:left;padding:8px 10px;border-radius:6px;border:1px solid var(--line);background:transparent;color:var(--fg);cursor:pointer}
+.opts button:hover{border-color:var(--accent)}
+.opts button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.opts button.right{border-color:var(--ok);color:var(--ok);font-weight:700}
+.opts button.wrong{border-color:var(--bad);color:var(--bad);text-decoration:line-through}
+.fb{font-size:.92rem;color:var(--muted);min-height:1.4em}
+.bubble{position:relative;border:1px solid var(--line);border-radius:14px;padding:10px 14px;font-style:italic}
+.who{font-size:.85rem;color:var(--muted)}
+.feld{font-family:var(--f-mono);font-size:.85rem;display:grid;grid-template-columns:auto 1fr;gap:8px 10px;align-items:center}
+.feld select{font:inherit;padding:4px;border-radius:4px;border:1px solid var(--line);background:var(--card);color:var(--fg);min-width:0}
+.plan{font-size:.95rem;margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px}
+.plan li{display:grid;grid-template-columns:3.4em 1fr;gap:8px}
+.plan time{font-family:var(--f-mono);font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.thumbs{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.thumbs canvas{width:100%;height:auto;border-radius:4px}
+.ask{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px}
+.ask ul{margin:8px 0 0;padding-left:1.2em}
+@media (max-width:760px){.style,.row,.row.two{grid-template-columns:1fr}h1{font-size:1.9rem}}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="eyebrow">Waldland · Stilproben · Entwurf 1</span>
+  <h1>Ein Hang am Albtrauf, fünfmal gezeichnet</h1>
+  <p>Jede Probe zeigt dieselbe Szene, angelehnt an den Albtrauf bei Bad Urach: oben die Albhochfläche mit Wacholderheide und Schafen, an der Kante Kalkfelsen, darunter ein Buchenhang mit einer Fichtengruppe, unten im Tal die Forsthütte. Die kleine Figur auf dem Weg bist du. Alle Stile sind bewusst einfach gehalten, damit das Spiel später wenig Fehler hat.</p>
+</header>
+
+<section aria-labelledby="s1">
+  <h2 id="s1">A · Fünf Grafikstile</h2>
+
+  <div class="style">
+    <canvas id="c1" class="px" width="600" height="380" aria-label="Pixel-Stil"></canvas>
+    <div class="meta"><span class="tag">Stil 1</span><h3>Pixel</h3>
+      <p>Grobe Pixel wie in Stardew Valley. Die Lücken füllt deine Vorstellung.</p>
+      <dl><dt>Stärke</dt><dd>Gemütlich, klar lesbar, einfach zu erweitern</dd><dt>Schwäche</dt><dd>Feine Merkmale (Blattform, Rinde) gehen verloren</dd><dt>Aufwand</dt><dd>niedrig</dd></dl></div>
+  </div>
+
+  <div class="style">
+    <canvas id="c2" width="600" height="380" aria-label="Flacher Stil"></canvas>
+    <div class="meta"><span class="tag">Stil 2</span><h3>Flach und geometrisch</h3>
+      <p>Kreise, Dreiecke, klare Flächen. Wirkt modern und aufgeräumt, wie eine Illustration.</p>
+      <dl><dt>Stärke</dt><dd>Am wenigsten Fehlerquellen, skaliert auf jede Bildschirmgröße</dd><dt>Schwäche</dt><dd>Kann kühl und etwas steril wirken</dd><dt>Aufwand</dt><dd>sehr niedrig</dd></dl></div>
+  </div>
+
+  <div class="style">
+    <canvas id="c3" width="600" height="380" aria-label="Aquarell-Stil"></canvas>
+    <div class="meta"><span class="tag">Stil 3</span><h3>Aquarell-Skizze</h3>
+      <p>Weiche, durchscheinende Farbflecken auf Papier, wie ein Skizzenbuch vom Wandern.</p>
+      <dl><dt>Stärke</dt><dd>Stimmungsvoll, lässt viel Raum für Vorstellungskraft</dd><dt>Schwäche</dt><dd>Weniger präzise, einzelne Objekte schwerer anzuklicken</dd><dt>Aufwand</dt><dd>mittel</dd></dl></div>
+  </div>
+
+  <div class="style">
+    <canvas id="c4" width="600" height="380" aria-label="Forstkarten-Stil"></canvas>
+    <div class="meta"><span class="tag">Stil 4</span><h3>Forstkarte</h3>
+      <p>Höhenlinien, Baumsymbole, Abteilungsnummern, so wie Förster/innen ihren Wald auf dem Papier sehen. Nebenbei lernst du Karten lesen.</p>
+      <dl><dt>Stärke</dt><dd>Sehr authentisch, echte Arbeitsgrundlage im Beruf</dd><dt>Schwäche</dt><dd>Abstrakt, die Landschaft entsteht nur im Kopf</dd><dt>Aufwand</dt><dd>niedrig bis mittel</dd></dl></div>
+  </div>
+
+  <div class="style">
+    <canvas id="c5" width="600" height="380" aria-label="Isometrischer Stil"></canvas>
+    <div class="meta"><span class="tag">Stil 5</span><h3>Isometrische Klötzchen</h3>
+      <p>Schräg von oben auf Blöcke geschaut. Das Gelände hat echte Höhe: Hochfläche, Steilhang, Tal.</p>
+      <dl><dt>Stärke</dt><dd>Man sieht Relief und Hanglage sofort</dd><dt>Schwäche</dt><dd>Aufwendigere Technik, Bäume verdecken sich gegenseitig</dd><dt>Aufwand</dt><dd>mittel bis hoch</dd></dl></div>
+  </div>
+</section>
+
+<section aria-labelledby="s2">
+  <h2 id="s2">B · Wie eine Lernfrage auftaucht</h2>
+  <p>Drei Möglichkeiten für dieselbe Idee: Das Spiel fragt dich etwas ab. Die ersten beiden kannst du ausprobieren.</p>
+  <div class="row">
+    <div class="card"><span class="lbl">B1 · Karteikarte</span>
+      <p>Welche Baumart hat eine glatte, silbergraue Rinde und prägt die Hangwälder am Albtrauf?</p>
+      <div class="opts" data-q="1"><button data-ok="0">Stieleiche</button><button data-ok="1">Rotbuche</button><button data-ok="0">Gemeine Esche</button><button data-ok="0">Bergahorn</button></div>
+      <p class="fb" aria-live="polite"></p></div>
+    <div class="card"><span class="lbl">B2 · Im Gespräch</span>
+      <span class="who">Wanderin am Heiderand:</span>
+      <div class="bubble">„Warum wachsen hier oben nur diese stacheligen Büsche und kein Wald?"</div>
+      <div class="opts" data-q="2"><button data-ok="0">Der Boden ist zu nass für Bäume.</button><button data-ok="1">Schafe fressen seit Jahrhunderten alles weg, nur den stacheligen Wacholder nicht.</button><button data-ok="0">Die Büsche wurden als Windschutz gepflanzt.</button></div>
+      <p class="fb" aria-live="polite"></p></div>
+    <div class="card"><span class="lbl">B3 · Feldbuch</span>
+      <p>Du trägst selbst ein, was du im Bestand siehst. Das Spiel prüft danach.</p>
+      <div class="feld">
+        <label for="f1">Abteilung</label><span>12a</span>
+        <label for="f1">Baumart</label><select id="f1"><option>–</option><option>Rotbuche</option><option>Fichte</option><option>Weißtanne</option></select>
+        <label for="f2">Alter</label><select id="f2"><option>–</option><option>ca. 40 J.</option><option>ca. 120 J.</option></select>
+        <label for="f3">Boden</label><select id="f3"><option>–</option><option>Rendzina</option><option>Podsol</option><option>Gley</option></select>
+      </div></div>
+  </div>
+</section>
+
+<section aria-labelledby="s3">
+  <h2 id="s3">C · Wie du zwischen Revier und Forstamt wechselst</h2>
+  <div class="row two">
+    <div class="card"><span class="lbl">C1 · Zwei Zoomstufen</span>
+      <div class="thumbs"><canvas id="t1" width="300" height="190" aria-label="Revier-Ansicht"></canvas><canvas id="t2" width="300" height="190" aria-label="Forstamt-Ansicht"></canvas></div>
+      <p>Im Revier läufst du selbst durch den Wald. Im Forstamt siehst du den ganzen Bezirk als Karte und entscheidest für viele Flächen gleichzeitig.</p></div>
+    <div class="card"><span class="lbl">C2 · Zwei Tagespläne (Beispiel)</span>
+      <div class="row two" style="gap:12px">
+        <div><strong>Revier</strong><ul class="plan">
+          <li><time>07:00</time>Bäume auszeichnen, Abt. 12a</li>
+          <li><time>10:30</time>Forstunternehmer einweisen</li>
+          <li><time>14:00</time>Verkehrssicherung am Wanderparkplatz</li></ul></div>
+        <div><strong>Forstamt</strong><ul class="plan">
+          <li><time>08:00</time>Förderanträge im Posteingang</li>
+          <li><time>10:00</time>Besprechung im Landratsamt</li>
+          <li><time>16:30</time>Pressetermin zum Borkenkäfer</li></ul></div>
+      </div>
+      <p>Der Tag startet mit einem Plan, den du abarbeitest oder umwirfst. Der Unterschied zwischen den Rollen steckt in den Aufgaben selbst.</p></div>
+  </div>
+</section>
+
+<div class="ask">
+  <h3>Deine Rückmeldung</h3>
+  <ul>
+    <li>Welcher Stil gefällt dir, und <em>warum</em>? Was stört dich an den anderen?</li>
+    <li>Stile lassen sich auch mischen, zum Beispiel Pixel fürs Revier und Forstkarte fürs Forstamt.</li>
+    <li>B und C: Welche Variante fühlt sich am meisten nach Spiel an?</li>
+  </ul>
+</div>
+</div>
+
+<script>
+(function(){
+const W=600,H=380;
+function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+const R=rng(7);
+const edge=x=>H*0.30+Math.sin(x*0.02)*8+Math.sin(x*0.007+1)*12;
+const VALLEY=H*0.82;
+const path=[[440,0],[430,60],[420,edge(420)],[350,165],[455,215],[380,270],[470,320],[600,338]];
+const hut={x:525,y:348};
+const me={x:392,y:276};
+function nearPath(x,y,d){for(let i=0;i<path.length-1;i++){const[a,b]=path[i],[c,e]=path[i+1];const dx=c-a,dy=e-b,t=Math.max(0,Math.min(1,((x-a)*dx+(y-b)*dy)/(dx*dx+dy*dy)));if(Math.hypot(x-a-t*dx,y-b-t*dy)<d)return true}return false}
+const beech=[],spruce=[],juni=[],sheep=[],rocks=[];
+for(let n=0;n<400&&beech.length<85;n++){const x=R()*W,y=edge(x)+14+R()*(VALLEY-edge(x)-18);if(nearPath(x,y,12))continue;if(Math.hypot(x-110,y-250)<50)continue;beech.push({x,y,r:9+R()*5})}
+for(let n=0;n<200&&spruce.length<16;n++){const a=R()*6.28,d=Math.sqrt(R())*46,x=110+Math.cos(a)*d,y=250+Math.sin(a)*d*0.8;if(y<edge(x)+14)continue;spruce.push({x,y,r:7+R()*2})}
+for(let n=0;n<300&&juni.length<34;n++){const x=260+R()*340,y=12+R()*(edge(x)-30);if(nearPath(x,y,10))continue;juni.push({x,y})}
+for(let n=0;n<7;n++)sheep.push({x:470+R()*90,y:60+R()*50});
+for(let n=0;n<7;n++){const x=175+n*13+R()*6;rocks.push({x,y:edge(x)+2+R()*6,w:12+R()*8,h:8+R()*6})}
+const items=()=>[...beech.map(o=>({...o,k:'b'})),...spruce.map(o=>({...o,k:'s'})),...juni.map(o=>({...o,k:'j'})),...sheep.map(o=>({...o,k:'sh'})),{...hut,k:'h'},{...me,k:'me'}].sort((a,b)=>a.y-b.y);
+function regions(ctx,cols){ // plateau, slope, valley
+  ctx.fillStyle=cols[0];ctx.fillRect(0,0,W,H);
+  ctx.fillStyle=cols[1];ctx.beginPath();ctx.moveTo(0,edge(0));for(let x=0;x<=W;x+=6)ctx.lineTo(x,edge(x));ctx.lineTo(W,VALLEY);ctx.lineTo(0,VALLEY);ctx.fill();
+  ctx.fillStyle=cols[2];ctx.beginPath();ctx.moveTo(0,VALLEY);for(let x=0;x<=W;x+=10)ctx.lineTo(x,VALLEY+Math.sin(x*0.03)*3);ctx.lineTo(W,H);ctx.lineTo(0,H);ctx.fill();
+}
+function strokePath(ctx){ctx.beginPath();ctx.moveTo(...path[0]);path.slice(1).forEach(p=>ctx.lineTo(...p));ctx.stroke()}
+
+// 1 Pixel
+function pixel(cv){const s=4,w=W/s,h=Math.round(H/s);const o=document.createElement('canvas');o.width=w;o.height=h;const c=o.getContext('2d');const r=rng(3);
+  for(let y=0;y<h;y++)for(let x=0;x<w;x++){const X=x*s,Y=y*s;let col;
+    if(Y<edge(X))col=r()<.18?'#a9b863':'#98aa55';else if(Y<VALLEY)col=r()<.2?'#51632c':'#5b6e31';else col=r()<.15?'#8db257':'#7ea44b';c.fillStyle=col;c.fillRect(x,y,1,1)}
+  c.fillStyle='#cdb88a';for(let i=0;i<path.length-1;i++){const[a,b]=path[i],[d,e]=path[i+1],n=Math.ceil(Math.hypot(d-a,e-b)/s);for(let k=0;k<=n;k++){c.fillRect(Math.round((a+(d-a)*k/n)/s),Math.round((b+(e-b)*k/n)/s),2,1)}}
+  rocks.forEach(q=>{c.fillStyle='#d8d2c2';c.fillRect(Math.round(q.x/s),Math.round(q.y/s),Math.round(q.w/s),Math.round(q.h/s));c.fillStyle='#aaa292';c.fillRect(Math.round(q.x/s),Math.round((q.y+q.h)/s)-1,Math.round(q.w/s),1)});
+  items().forEach(o=>{const x=Math.round(o.x/s),y=Math.round(o.y/s);
+    if(o.k==='b'){c.fillStyle='#3b2a1c';c.fillRect(x,y+1,1,2);c.fillStyle='#2d6a2a';c.fillRect(x-2,y-3,5,4);c.fillRect(x-1,y-4,3,1);c.fillStyle='#4f9138';c.fillRect(x-1,y-3,2,2)}
+    if(o.k==='s'){c.fillStyle='#1b4630';c.fillRect(x,y-4,1,1);c.fillRect(x-1,y-3,3,2);c.fillRect(x-2,y-1,5,2);c.fillStyle='#3b2a1c';c.fillRect(x,y+1,1,1)}
+    if(o.k==='j'){c.fillStyle='#2c5a3c';c.fillRect(x,y-2,1,3);c.fillStyle='#3d7550';c.fillRect(x,y-2,1,1)}
+    if(o.k==='sh'){c.fillStyle='#f2efe6';c.fillRect(x,y,2,1);c.fillStyle='#333';c.fillRect(x+2,y,1,1)}
+    if(o.k==='h'){c.fillStyle='#8a5a34';c.fillRect(x-3,y-2,7,4);c.fillStyle='#a8382a';c.fillRect(x-4,y-4,9,2);c.fillStyle='#3b2a1c';c.fillRect(x,y,1,2)}
+    if(o.k==='me'){c.fillStyle='#e8c39e';c.fillRect(x,y-3,1,1);c.fillStyle='#3e5a2b';c.fillRect(x-1,y-4,3,1);c.fillStyle='#4a6d33';c.fillRect(x,y-2,1,2);c.fillStyle='#2b2b2b';c.fillRect(x,y,1,1)}});
+  const ctx=cv.getContext('2d');ctx.imageSmoothingEnabled=false;ctx.drawImage(o,0,0,W,h*s)}
+
+// 2 Flach
+function flat(cv){const ctx=cv.getContext('2d');regions(ctx,['#c9d48f','#8fae5e','#b7cf7c']);
+  ctx.strokeStyle='#efe3c2';ctx.lineWidth=7;ctx.lineJoin='round';strokePath(ctx);
+  rocks.forEach(q=>{ctx.fillStyle='#e6e1d3';ctx.beginPath();ctx.moveTo(q.x,q.y+q.h);ctx.lineTo(q.x+q.w*.3,q.y);ctx.lineTo(q.x+q.w,q.y+q.h*.3);ctx.lineTo(q.x+q.w,q.y+q.h);ctx.fill()});
+  items().forEach(o=>{const{x,y}=o;
+    if(o.k==='b'){ctx.fillStyle='#4b8a3c';ctx.beginPath();ctx.arc(x,y,o.r,0,7);ctx.fill();ctx.fillStyle='#3a7431';ctx.beginPath();ctx.arc(x+o.r*.35,y+o.r*.3,o.r*.65,0,7);ctx.fill()}
+    if(o.k==='s'){ctx.fillStyle='#24543a';ctx.beginPath();ctx.moveTo(x,y-o.r*1.8);ctx.lineTo(x+o.r,y+o.r*.6);ctx.lineTo(x-o.r,y+o.r*.6);ctx.fill()}
+    if(o.k==='j'){ctx.fillStyle='#3c6f4c';ctx.beginPath();ctx.ellipse(x,y,2.6,6,0,0,7);ctx.fill()}
+    if(o.k==='sh'){ctx.fillStyle='#fbf8f0';ctx.beginPath();ctx.ellipse(x,y,5,3.2,0,0,7);ctx.fill();ctx.fillStyle='#2e2e2e';ctx.beginPath();ctx.arc(x+5,y,1.6,0,7);ctx.fill()}
+    if(o.k==='h'){ctx.fillStyle='#9a6a42';ctx.fillRect(x-14,y-8,28,16);ctx.fillStyle='#c0503c';ctx.beginPath();ctx.moveTo(x-17,y-8);ctx.lineTo(x,y-20);ctx.lineTo(x+17,y-8);ctx.fill()}
+    if(o.k==='me'){ctx.fillStyle='#e8a33a';ctx.beginPath();ctx.arc(x,y,6,0,7);ctx.fill();ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(x,y,2.2,0,7);ctx.fill()}})}
+
+// 3 Aquarell
+function water(cv){const ctx=cv.getContext('2d');const r=rng(11);ctx.fillStyle='#f4efe3';ctx.fillRect(0,0,W,H);
+  for(let i=0;i<9000;i++){ctx.fillStyle=`rgba(120,100,70,${r()*.05})`;ctx.fillRect(r()*W,r()*H,1,1)}
+  const wash=(fx,col,n,rad)=>{ctx.globalCompositeOperation='multiply';for(let i=0;i<n;i++){const p=fx();ctx.fillStyle=col;ctx.globalAlpha=.06+r()*.05;ctx.beginPath();ctx.arc(p[0],p[1],rad*(.5+r()),0,7);ctx.fill()}ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over'};
+  ctx.filter='blur(2px)';
+  wash(()=>{const x=r()*W;return[x,r()*edge(x)]},'#c7c27a',260,26);
+  wash(()=>{const x=r()*W;return[x,edge(x)+r()*(VALLEY-edge(x))]},'#6f8f52',380,24);
+  wash(()=>[r()*W,VALLEY+r()*(H-VALLEY)],'#a9c27a',120,24);
+  ctx.filter='none';
+  ctx.strokeStyle='rgba(190,160,110,.6)';ctx.lineWidth=4;strokePath(ctx);
+  rocks.forEach(q=>{ctx.fillStyle='rgba(190,185,170,.7)';ctx.fillRect(q.x,q.y,q.w,q.h);ctx.strokeStyle='rgba(90,80,70,.5)';ctx.lineWidth=.8;ctx.strokeRect(q.x,q.y,q.w,q.h)});
+  items().forEach(o=>{const{x,y}=o;ctx.lineWidth=.8;
+    if(o.k==='b'){ctx.globalCompositeOperation='multiply';for(let i=0;i<3;i++){ctx.fillStyle=`rgba(${60+i*10},${120+i*8},60,.28)`;ctx.beginPath();ctx.arc(x+(r()-.5)*5,y+(r()-.5)*5,o.r*(.7+r()*.4),0,7);ctx.fill()}ctx.globalCompositeOperation='source-over';ctx.strokeStyle='rgba(50,60,40,.45)';ctx.beginPath();ctx.arc(x,y,o.r*.9,r()*2,4+r()*2);ctx.stroke()}
+    if(o.k==='s'){ctx.fillStyle='rgba(30,70,55,.55)';ctx.beginPath();ctx.moveTo(x,y-o.r*1.8);ctx.lineTo(x+o.r,y+o.r*.6);ctx.lineTo(x-o.r,y+o.r*.6);ctx.fill()}
+    if(o.k==='j'){ctx.fillStyle='rgba(40,85,60,.6)';ctx.beginPath();ctx.ellipse(x,y,2.5,6,0,0,7);ctx.fill()}
+    if(o.k==='sh'){ctx.fillStyle='rgba(255,255,250,.9)';ctx.strokeStyle='rgba(80,70,60,.6)';ctx.beginPath();ctx.ellipse(x,y,5,3,0,0,7);ctx.fill();ctx.stroke()}
+    if(o.k==='h'){ctx.fillStyle='rgba(150,100,60,.7)';ctx.fillRect(x-13,y-8,26,15);ctx.fillStyle='rgba(170,70,50,.7)';ctx.beginPath();ctx.moveTo(x-16,y-8);ctx.lineTo(x,y-19);ctx.lineTo(x+16,y-8);ctx.fill();ctx.strokeStyle='rgba(60,40,30,.6)';ctx.strokeRect(x-13,y-8,26,15)}
+    if(o.k==='me'){ctx.fillStyle='rgba(210,120,40,.85)';ctx.beginPath();ctx.arc(x,y,5,0,7);ctx.fill()}})}
+
+// 4 Forstkarte
+function karte(cv,small){const ctx=cv.getContext('2d');const sc=cv.width/W;ctx.save();ctx.scale(sc,sc);
+  ctx.fillStyle='#f7f5ec';ctx.fillRect(0,0,W,H);
+  ctx.fillStyle='#e2ecd4';ctx.beginPath();ctx.moveTo(0,edge(0));for(let x=0;x<=W;x+=6)ctx.lineTo(x,edge(x));ctx.lineTo(W,VALLEY);ctx.lineTo(0,VALLEY);ctx.fill();
+  for(let k=-4;k<18;k++){ctx.beginPath();for(let x=0;x<=W;x+=6){const t=k<0?edge(x)+k*22:edge(x)+k*(VALLEY-edge(x))/14+(k>14?(k-14)*14:0);x?ctx.lineTo(x,t):ctx.moveTo(x,t)}ctx.strokeStyle=k%5===0?'#a0764e':'#c9a57f';ctx.lineWidth=k%5===0?1.2:.6;ctx.stroke()}
+  ctx.fillStyle='#8a6a4a';ctx.font='italic 9px "IBM Plex Mono",monospace';ctx.fillText('750',8,edge(8)-3);ctx.fillText('600',8,VALLEY-4);
+  rocks.forEach(q=>{ctx.strokeStyle='#666';ctx.lineWidth=.7;for(let i=0;i<q.w;i+=3){ctx.beginPath();ctx.moveTo(q.x+i,q.y);ctx.lineTo(q.x+i+2,q.y+q.h*.8);ctx.stroke()}});
+  const r=rng(5);ctx.strokeStyle='#3f6b3a';ctx.lineWidth=.9;
+  for(let y=edge(0)+18;y<VALLEY-6;y+=17)for(let x=10;x<W;x+=19){const xx=x+((y/17|0)%2)*9;if(y<edge(xx)+10||nearPath(xx,y,10))continue;
+    if(Math.hypot(xx-110,y-250)<48){ctx.beginPath();ctx.moveTo(xx-3,y+2);ctx.lineTo(xx,y-4);ctx.lineTo(xx+3,y+2);ctx.stroke()}else{ctx.beginPath();ctx.arc(xx,y,2.6,0,7);ctx.stroke()}}
+  ctx.fillStyle='#6b7d4a';for(let i=0;i<260;i++){const x=260+r()*340,y=10+r()*200;if(y<edge(x)-8)ctx.fillRect(x,y,1.2,1.2)}
+  juni.forEach(j=>{ctx.beginPath();ctx.moveTo(j.x-2,j.y+2);ctx.lineTo(j.x,j.y-3);ctx.lineTo(j.x+2,j.y+2);ctx.stroke()});
+  ctx.strokeStyle='#222';ctx.lineWidth=1.2;ctx.setLineDash([5,3]);strokePath(ctx);
+  ctx.strokeStyle='#b0413a';ctx.lineWidth=1.3;ctx.setLineDash([8,3,2,3]);ctx.beginPath();ctx.moveTo(300,edge(300));ctx.lineTo(290,VALLEY);ctx.stroke();ctx.setLineDash([]);
+  ctx.fillStyle='#222';ctx.fillRect(hut.x-5,hut.y-5,10,10);
+  ctx.fillStyle='#b0413a';ctx.font='italic 700 18px "Alegreya",Georgia,serif';ctx.fillText('12a',150,215);ctx.fillText('12b',400,245);
+  ctx.font='10px "IBM Plex Mono",monospace';ctx.fillText('Bu 125 J.',148,229);ctx.fillText('Bu/Fi 60 J.',396,259);
+  ctx.fillStyle='#d4462f';ctx.beginPath();ctx.arc(me.x,me.y,4.5,0,7);ctx.fill();
+  if(!small){ctx.fillStyle='rgba(247,245,236,.94)';ctx.fillRect(8,H-70,150,62);ctx.strokeStyle='#999';ctx.lineWidth=.6;ctx.strokeRect(8,H-70,150,62);
+    ctx.fillStyle='#333';ctx.font='9px "IBM Plex Mono",monospace';
+    [['○','Laubholz'],['∧','Nadelholz / Wacholder'],['- -','Weg'],['▬','Abteilungsgrenze']].forEach((l,i)=>{ctx.fillText(l[0],16,H-54+i*13);ctx.fillText(l[1],40,H-54+i*13)});
+    ctx.fillText('Albhochfläche',470,edge(470)-50);ctx.fillText('Albtrauf',200,edge(200)-6)}
+  ctx.restore()}
+
+// 5 Isometrisch
+function iso(cv){const ctx=cv.getContext('2d');ctx.fillStyle='#dfe8f0';ctx.fillRect(0,0,W,H);
+  const N=16,tw=36,th=18,hz=11,ox=W/2,oy=48;
+  const hAt=(x,y)=>y<edge(x)?4:y<VALLEY?4*(1-(y-edge(x))/(VALLEY-edge(x))):0;
+  const cell=(i,j)=>[(i+.5)/N*W,(j+.5)/N*H];
+  const near=o=>[Math.round(o.x/W*N-.5),Math.round(o.y/H*N-.5)].join();const HUT=near(hut),ME=near(me);
+  const P=(i,j,h)=>[ox+(i-j)*tw/2,oy+(i+j)*th/2-h*hz];
+  for(let s=0;s<2*N;s++)for(let i=0;i<N;i++){const j=s-i;if(j<0||j>=N)continue;const[x,y]=cell(i,j);const h=Math.round(hAt(x,y)*2)/2;
+    const top=y<edge(x)?'#b9c476':y<VALLEY?'#7f9c55':'#a6c270';const[a,b]=P(i,j,h);
+    ctx.fillStyle='#8a7355';ctx.beginPath();ctx.moveTo(a-tw/2,b+th/2);ctx.lineTo(a,b+th);ctx.lineTo(a,b+th+h*hz+2);ctx.lineTo(a-tw/2,b+th/2+h*hz+2);ctx.fill();
+    ctx.fillStyle='#6f5b43';ctx.beginPath();ctx.moveTo(a+tw/2,b+th/2);ctx.lineTo(a,b+th);ctx.lineTo(a,b+th+h*hz+2);ctx.lineTo(a+tw/2,b+th/2+h*hz+2);ctx.fill();
+    let t=top;if(nearPath(x,y,14))t='#d9c69a';if(rocks.some(q=>Math.abs(q.x-x)<22&&Math.abs(q.y-y)<16))t='#d6d1c3';
+    ctx.fillStyle=t;ctx.beginPath();ctx.moveTo(a,b);ctx.lineTo(a+tw/2,b+th/2);ctx.lineTo(a,b+th);ctx.lineTo(a-tw/2,b+th/2);ctx.fill();
+    const cx=a,cy=b+th/2;
+    if(i+','+j===HUT){ctx.fillStyle='#9a6a42';ctx.fillRect(cx-8,cy-12,16,12);ctx.fillStyle='#b8473a';ctx.beginPath();ctx.moveTo(cx-11,cy-12);ctx.lineTo(cx,cy-22);ctx.lineTo(cx+11,cy-12);ctx.fill();continue}
+    if(i+','+j===ME){ctx.fillStyle='#4a6d33';ctx.fillRect(cx-2,cy-12,4,9);ctx.fillStyle='#e8c39e';ctx.beginPath();ctx.arc(cx,cy-14,2.6,0,7);ctx.fill();continue}
+    const bs=beech.filter(o=>Math.abs(o.x-x)<W/N/2&&Math.abs(o.y-y)<H/N/2).length,ss=spruce.filter(o=>Math.abs(o.x-x)<W/N/2&&Math.abs(o.y-y)<H/N/2).length,js=juni.filter(o=>Math.abs(o.x-x)<W/N/2&&Math.abs(o.y-y)<H/N/2).length;
+    if(ss){ctx.fillStyle='#4a3524';ctx.fillRect(cx-1,cy-4,2,4);ctx.fillStyle='#1f4d36';ctx.beginPath();ctx.moveTo(cx,cy-26);ctx.lineTo(cx+7,cy-4);ctx.lineTo(cx-7,cy-4);ctx.fill()}
+    else if(bs){ctx.fillStyle='#4a3524';ctx.fillRect(cx-1.5,cy-9,3,9);ctx.fillStyle='#3f7d34';ctx.beginPath();ctx.arc(cx,cy-15,9,0,7);ctx.fill();ctx.fillStyle='#5a9a40';ctx.beginPath();ctx.arc(cx-3,cy-18,4,0,7);ctx.fill()}
+    else if(js){ctx.fillStyle='#2f5f42';ctx.beginPath();ctx.moveTo(cx,cy-12);ctx.lineTo(cx+3,cy);ctx.lineTo(cx-3,cy);ctx.fill()}
+  }}
+
+const draw={c1:pixel,c2:flat,c3:water,c4:karte,c5:iso};
+Object.entries(draw).forEach(([id,f])=>{try{f(document.getElementById(id))}catch(e){console.error(e)}});
+// Thumbnails C1
+const t1=document.getElementById('t1').getContext('2d');t1.imageSmoothingEnabled=false;t1.drawImage(document.getElementById('c1'),300,170,300,190,0,0,300,190);
+karte(document.getElementById('t2'),true);
+
+// Quiz B1/B2
+const fb={1:['Richtig: Die Rotbuche hat eine glatte, silbergraue Rinde.','Nicht ganz. Achte auf die glatte, silbergraue Rinde.'],2:['Richtig: Die Wacholderheide entstand durch jahrhundertelange Schafbeweidung.','Nicht ganz. Denk an die Schafe auf der Hochfläche.']};
+document.querySelectorAll('.opts').forEach(g=>g.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const ok=b.dataset.ok==='1';b.classList.add(ok?'right':'wrong');g.parentElement.querySelector('.fb').textContent=fb[g.dataset.q][ok?0:1]}));
+})();
+</script>
