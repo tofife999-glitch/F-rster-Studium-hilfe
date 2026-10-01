@@ -64,7 +64,7 @@ header,section{display:flex;flex-direction:column;gap:16px}
 .step .dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--accent);background:var(--card);margin-top:4px}
 .step b{display:block}
 .step span{font-size:.93rem;color:var(--muted)}
-.jobs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+#jobs{display:flex;flex-direction:column;gap:24px}#jobs h3{margin-bottom:-12px}.jobs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .job{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:6px;min-width:0}
 .job .k{font:500 .72rem var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .job b{font-family:var(--f-display);font-size:1.05rem;line-height:1.2}
@@ -136,12 +136,13 @@ a{color:var(--accent)}
     <div class="step"><i class="dot"></i><div><b>Laufbahnprüfung</b><span>Schriftlich und mündlich im Wald („Waldprüfung“), je zur Hälfte gewertet. Seit 2024 bundesweit anerkannt, damit ist auch ein Wechsel in andere Bundesländer möglich.</span></div></div>
     <div class="step"><i class="dot"></i><div><b>Revierleitung (A 11)</b><span>Bei ForstBW im Staatswald, bei einer der 46 unteren Forstbehörden an den Landratsämtern oder direkt bei einer Kommune. Später z. B. Büroleitung an der unteren Forstbehörde (A 12–A 13) oder eine Fachstelle für Waldnaturschutz, Förderung oder Wildtiere.</span></div></div>
   </div>
-  <p class="note">Weiterkommen nach oben: Die HFR bietet einen konsekutiven, akkreditierten M.Sc. Forstwirtschaft an. Ein solcher Master kann in Baden-Württemberg grundsätzlich den Zugang zum höheren Dienst öffnen; die Länder prüfen das im Einzelfall.</p>
+  <p class="note">Weiterkommen nach oben: Die HFR bietet einen M.Sc. Forstwirtschaft an (3 Semester, 90 ECTS, 20 Plätze pro Jahr, 2025 ohne Auswahlverfahren). Er ist konsekutiv und akkreditiert und öffnet damit in Baden-Württemberg grundsätzlich das Traineeprogramm für den höheren Dienst. Mehrere Absolvent/innen sind diesen Weg schon gegangen. Für die Revierleitung brauchst du ihn nicht.</p>
 </section>
 
 <section aria-labelledby="h-jobs">
   <h2 id="h-jobs">Weitere Berufe mit diesem Abschluss</h2>
-  <div class="jobs" id="jobs"><p class="note">Die Recherche zu den Berufswegen läuft noch.</p></div>
+  <p>Laut HFR haben fast alle Absolventen direkt nach dem Studium eine Stelle, etwa 15 % arbeiten im Ausland. Der öffentliche Dienst ist nur noch einer von vielen Arbeitgebern. Die Beispiele unten stammen überwiegend aus echten Stellenanzeigen (2021–2026). Mit „Zusatz“ ist gekennzeichnet, wenn der Bachelor allein nicht reicht.</p>
+  <div id="jobs"></div>
 </section>
 
 <section aria-labelledby="h-table">
@@ -157,6 +158,8 @@ a{color:var(--accent)}
     <li>HFR Rottenburg, M.Sc. Forstwirtschaft, häufige Fragen: <a href="https://www.hs-rottenburg.net/studium/msc-forstwirtschaft/infos-ueber-den-studiengang/haeufige-fragen/">hs-rottenburg.net</a></li>
     <li>Qualifizierungs- und Prüfungsordnung gehobener technischer Forstdienst, Gesetzblatt BW 2023 Nr. 14: <a href="https://www.landtag-bw.de/resource/blob/214478/11fe3c2c108af2400c5b327e25d909f3/GBl202314.pdf">landtag-bw.de</a></li>
     <li>ForstBW, Traineeprogramm und FAQ: <a href="https://www.forstbw.de/ueber-uns/karriere/ausbildung-und-praktika/trainee/faq-ein-traineeprogramm-bei-forstbw">forstbw.de</a></li>
+    <li>HFR Rottenburg, Berufsfelder und Absolventenprofile: <a href="https://www.hs-rottenburg.net/informationen-fuer/studieninteressierte/studienangebote/forstwirtschaft-studium/berufsfelder/">hs-rottenburg.net</a></li>
+    <li>AKFB-Stelleninfo (wöchentliche Forst-Stellenanzeigen), Ausgaben 2021–2026: <a href="https://www.akfb.de/">akfb.de</a></li>
     <li>Landesforstverwaltung, Berufe und Karriere: <a href="https://waldportal-bw.de/de/p/uber-uns/berufe-und-karriere-257.html">waldportal-bw.de</a></li>
   </ul>
 </section>
@@ -217,6 +220,39 @@ sem.forEach((s,i)=>{const sum=s.reduce((a,m)=>a+m[1],0);
 
 const wahl=["Wald im Dialog","Wirtschaftsführung","Bodenmanagement","Klimarelevanz Forst und Holz","Naturschutz und Landschaftsmanagement","Ökosystemleistungen und Ökobilanz","Wildtiere und Gesellschaft","GIS-Analysen","Umweltgutachten","Angewandte Vegetationskunde","Open-Source-GIS und Fernerkundung","Strukturelementanalyse","Arboristik und Forstpflanzen","Pilze im Waldökosystem","Forstgeschichte und globale Waldpolitik","Agrarökologie und Regionalentwicklung","Holzmarkt und Unternehmensführung","Projektmanagement"];
 document.getElementById('wahl').innerHTML=wahl.map(w=>`<span>${w}</span>`).join('');
+
+
+// Berufe: [Gruppe, Titel, Beispiele, Alltag, Voraussetzung, Zusatz?]
+const jobs=[
+ ["Wald bewirtschaften","Revierleitung im öffentlichen Wald","ForstBW, Landratsämter, Kommunen","Bäume auszeichnen, Holzernte steuern, Privatwald beraten, Jagd, Waldpädagogik.","Traineeprogramm und Laufbahnprüfung",1],
+ ["Wald bewirtschaften","Förster/in im Adels- oder Großprivatwald","Fürst zu Fürstenberg (24.000 ha), Fürst von Hohenzollern, Waldburg-Wolfegg","Holzernte planen, Unternehmer steuern, Jagd. Oft mit Nebengeschäften wie Bestattungswald, Ökopunkten oder Wildbret.","Bachelor reicht meist",0],
+ ["Wald bewirtschaften","Stadtwald einer Großstadt","Garten-, Friedhofs- und Forstamt Stuttgart","Holzverkauf, Verkehrssicherung im viel besuchten Stadtwald, Artenschutz, Öffentlichkeitsarbeit.","Bachelor; für Beamtenstellen die Laufbahnprüfung",0],
+ ["Wald bewirtschaften","Förster/in bei einem Waldbesitzer-Zusammenschluss","FVS eG Schwarzwald, Forstbetriebsgemeinschaften","Kleine Privatwaldbesitzer beraten, Hiebe bündeln, Holz verkaufen, Förderanträge stellen.","Bachelor reicht",0],
+ ["Wald bewirtschaften","Bundesforst","BImA, 17 Bundesforstbetriebe","Wald auf Truppenübungsplätzen und Flächen des Nationalen Naturerbes, Wertgutachten, Ausgleichsflächen.","Eigenes Traineeprogramm oder Direkteinstieg mit Bachelor",0],
+ ["Wald bewirtschaften","Forsteinrichtung und Waldinventur","Ingenieurbüros wie OGF","Stichproben im Wald aufnehmen, auswerten, Zehnjahrespläne für Betriebe schreiben. Rund 60 % draußen.","Bachelor reicht",0],
+ ["Holz und Wirtschaft","Rundholzeinkauf im Sägewerk","Finkbeiner (Triberg), Mercer Holz","Verträge mit Waldbesitzern verhandeln, Abfuhr und Logistik planen, FSC- und PEFC-Herkunft sichern.","Bachelor reicht",0],
+ ["Holz und Wirtschaft","Forstservice-Unternehmen","z. B. Forstservice Würtenberger (Waldshut)","Holzernteeinsätze leiten, Maschinen einteilen, Kunden gewinnen. Später auch selbstständig.","Bachelor reicht",0],
+ ["Holz und Wirtschaft","Auditor/in für Waldzertifikate","DIN CERTCO, TÜV, HW-Zert","Forstbetriebe und Holzfirmen nach FSC- oder PEFC-Regeln prüfen, oft freiberuflich.","Berufserfahrung und Auditorenschulung",1],
+ ["Überraschend","Windenergie im Wald","Projektentwickler wie wpd","Waldflächen für Windräder finden, mit Eigentümern und Gemeinden verhandeln.","Bachelor reicht",0],
+ ["Gutachten und Technik","Baumkontrolle und Baumgutachten","Treevolution, Sachverständigenbüros","Stadt- und Straßenbäume auf Bruchsicherheit prüfen, Baumkataster führen, Maßnahmen festlegen.","FLL-Zertifikat nach einem Jahr Praxis",1],
+ ["Gutachten und Technik","Forstsachverständige/r","Freiberuflich, öffentlich bestellt durch die Regierungspräsidien","Wald bewerten bei Kauf oder Erbschaft, Wild- und Sturmschäden begutachten.","Mindestens 30 Jahre alt, viel Praxis, Bestellungsverfahren",1],
+ ["Gutachten und Technik","Drohnen und Fernerkundung","OGF-Drohnenteam, TU Dresden","Wald befliegen, Laserscans auswerten, Wildtiere oder Schäden aus der Luft erfassen.","Bachelor plus GIS und Drohnenführerschein",1],
+ ["Überraschend","Holzherkunft und Entwaldungsverordnung","BLE, Thünen-Kompetenzzentrum Holzherkünfte","Prüfen, ob gehandeltes Holz legal ist und nicht aus Entwaldung stammt; Holzarten bestimmen.","Kontrollstellen wohl mit Bachelor, Labor eher mit Master",0],
+ ["Naturschutz, Schutz und Bildung","Wildtierbeauftragte/r im Landkreis","Landratsämter in BW, z. B. Tübingen","Wildtiermonitoring koordinieren, bei Wildschweinen in der Stadt oder Herdenschutz beraten. Oft mit Revier kombiniert.","Meist Laufbahnprüfung",1],
+ ["Naturschutz, Schutz und Bildung","Nationalpark und Biosphärengebiet","Nationalpark Schwarzwald, Biosphärengebiet Schwarzwald","Gebietsbetreuung, Wildtiermanagement, Besucherlenkung, Forschungsassistenz.","Bachelor; für Ranger oft eigene Fortbildung",0],
+ ["Naturschutz, Schutz und Bildung","Waldpädagogik und Waldschule","Haus des Waldes, Forstbetriebe, Regionalverbände","Schulklassen und Gruppen durch den Wald führen, Programme entwickeln.","Zertifikat Waldpädagogik (ca. 20 Seminare)",1],
+ ["Naturschutz, Schutz und Bildung","Naturschutzverbände","NABU Waldinstitut, Deutscher Forstverein","Projekte, Fachpositionen und Kampagnen rund um den Wald.","Bachelor möglich, Master oft bevorzugt",0],
+ ["Überraschend","Bestattungswald","FriedWald, RuheForst","Standorte betreuen, Bäume für Gräber auswählen, Beisetzungen begleiten, Führungen geben.","Bachelor plus Vertriebsgeschick",0],
+ ["Überraschend","Grün an der Bahnstrecke","DB Fahrwegdienste (Stuttgart, Ulm, Karlsruhe)","Bäume und Bewuchs an Gleisen managen, Artenschutz, Ausgleichsflächen.","Bachelor; für Baumkontrolle FLL-Zertifikat",0],
+ ["Überraschend","Klimawald und CO₂-Zertifikate","Privatwald (z. B. Hatzfeldt), Projektentwickler","Klimaschutzprojekte im Wald entwickeln und für Unternehmen zertifizieren lassen.","Bachelor reicht",0],
+ ["Überraschend","Baumwipfelpfad und Walderlebnis","z. B. Baumwipfelpfad Steigerwald","Eine Besucherattraktion leiten, laut HFR die Stelle einer Absolventin.","Bachelor",0],
+ ["Naturschutz, Schutz und Bildung","Waldbrandschutz","Waldbrandkompetenzzentrum Brandenburg","Waldbrandrisiken analysieren, vorbeugen, ehemalige Militärflächen sichern.","Eher mit Master",1],
+ ["Naturschutz, Schutz und Bildung","Schutzwald in den Alpen","Fachstellen Schutzwald in Bayern","Hochlagen aufforsten, Holzverbauungen gegen Gleitschnee bauen, schwierige Hiebe am Steilhang.","Bayerische Laufbahnqualifikation",1],
+ ["Überraschend","Forstsaatgut","Staatsklenge Nagold (ForstBW)","Saatgut ernten, aufbereiten und lagern, Samenplantagen betreuen, Zapfenpflücker schulen.","Wenige Stellen",0],
+ ["Überraschend","Internationale Waldarbeit","GIZ, Entwicklungszusammenarbeit","Waldpolitik und Projekte in anderen Ländern. Laut HFR arbeiten rund 15 % der Absolventen im Ausland.","Für feste Stellen meist Master und Auslandserfahrung",1]
+];
+const groups=["Wald bewirtschaften","Holz und Wirtschaft","Gutachten und Technik","Naturschutz, Schutz und Bildung","Überraschend"];
+document.getElementById('jobs').innerHTML=groups.map(g=>`<h3>${g}</h3><div class="jobs">${jobs.filter(j=>j[0]===g).map(j=>`<div class="job"><b>${j[1]}</b><span class="k">${j[2]}</span><p>${j[3]}</p><span class="q">${j[5]?'Zusatz: ':''}${j[4]}</span></div>`).join('')}</div>`).join('');
 
 const tb=document.querySelector('#tbl tbody');let sp=0,sw=0;
 cats.forEach(c=>{sp+=c[2];sw+=c[3];tb.insertAdjacentHTML('beforeend',`<tr><td>${c[0]}</td><td>${c[2]}</td><td>${c[3]}</td><td>${c[2]+c[3]}</td><td>${fmt((c[2]+c[3])/TOT*100)}</td></tr>`)});
