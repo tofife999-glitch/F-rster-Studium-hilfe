@@ -1,0 +1,225 @@
+<title>Forstwirtschaft in Rottenburg</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500;700&family=Alegreya+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: eine Lesespalte; Kennzahlen, Themenbereiche als Balken, Stundenplan als Semesterzeilen, Besonderheiten, Berufswege, Tabelle, Quellen */
+:root{
+  --bg:#eceee6; --card:#f8f9f4; --fg:#1d2a22; --muted:#56655a; --line:#d3d9cc; --grid:#e1e5da; --accent:#2f6b3a; --chip:#e7ece1;
+  --s-p:#2a78d6; --s-w:#eb6834;
+  --f-display:"Alegreya",Georgia,serif; --f-body:"Alegreya Sans",system-ui,sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#131915;--card:#1a211c;--fg:#e2e8de;--muted:#9aa89d;--line:#2f3b33;--grid:#26302a;--accent:#8cc48f;--chip:#232c26;--s-p:#3987e5;--s-w:#d95926;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#131915;--card:#1a211c;--fg:#e2e8de;--muted:#9aa89d;--line:#2f3b33;--grid:#26302a;--accent:#8cc48f;--chip:#232c26;--s-p:#3987e5;--s-w:#d95926;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:17px/1.55 var(--f-body)}
+.wrap{max-width:980px;margin:0 auto;padding:40px 16px 80px;display:flex;flex-direction:column;gap:48px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:2.3rem}h2{font-size:1.6rem}h3{font-size:1.15rem}
+p{margin:0;max-width:68ch}
+.eyebrow{font:500 .78rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+header,section{display:flex;flex-direction:column;gap:16px}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.facts.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.fact .n{font:700 1.7rem var(--f-display);font-variant-numeric:tabular-nums}
+.fact b{font-family:var(--f-display);font-size:1.1rem}
+.fact span{font-size:.93rem;color:var(--muted)}
+.note{font-size:.92rem;color:var(--muted);border-left:3px solid var(--accent);padding-left:12px}
+.controls{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.seg button{font:500 .85rem var(--f-mono);padding:6px 12px;border:0;background:transparent;color:var(--fg);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.seg button:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:.9rem;color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.chart{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 20px;display:flex;flex-direction:column;gap:12px}
+.cat{display:grid;grid-template-columns:minmax(0,15em) minmax(0,1fr);gap:4px 16px;align-items:center;padding-bottom:10px;border-bottom:1px solid var(--grid)}
+.cat:last-child{border-bottom:0;padding-bottom:0}
+.cat .name{font-weight:500;line-height:1.25}
+.cat .name small{display:block;font-weight:400;font-size:.82rem;color:var(--muted)}
+.bar{display:flex;align-items:center;gap:8px;height:18px;min-width:0}
+.track{display:flex;gap:2px;height:14px;flex:0 0 auto}
+.track span{height:100%;display:block}
+.track span:last-child{border-radius:0 4px 4px 0}
+.bar .v{font:500 .78rem var(--f-mono);color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.ex{grid-column:2;font-size:.88rem;color:var(--muted)}
+.tip{position:fixed;pointer-events:none;background:var(--fg);color:var(--bg);font-size:.85rem;padding:8px 10px;border-radius:6px;max-width:300px;z-index:10;line-height:1.35}
+/* Stundenplan */
+.plan{display:flex;flex-direction:column;gap:8px}
+.sem{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px;align-items:stretch}
+.sem .lab{font:500 .8rem var(--f-mono);color:var(--muted);padding-top:8px;font-variant-numeric:tabular-nums}
+.sem .lab b{display:block;font:700 1.05rem var(--f-display);color:var(--fg)}
+.mods{display:flex;flex-wrap:wrap;gap:3px;min-width:0}
+.mod{background:var(--chip);border-radius:4px;padding:6px 7px;font-size:.8rem;line-height:1.2;min-width:6.5em;hyphens:auto;-webkit-hyphens:auto;display:flex;flex-direction:column;gap:2px}
+.mod i{font:500 .7rem var(--f-mono);font-style:normal;color:var(--muted)}
+.mod.w{background:transparent;border:1px dashed var(--line)}
+.mod.big{background:var(--fg);color:var(--bg)}.mod.big i{color:var(--bg);opacity:.75}
+.milestone{margin-left:6.2em;font:500 .8rem var(--f-mono);color:var(--accent);padding:2px 0}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font-size:.85rem;background:var(--chip);border-radius:999px;padding:3px 10px}
+/* Karriere */
+.lane{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px;display:flex;flex-direction:column;min-width:0}
+.step{display:grid;grid-template-columns:14px 1fr;gap:12px;padding-bottom:14px;position:relative}
+.step:before{content:"";position:absolute;left:6px;top:14px;bottom:0;width:2px;background:var(--line)}
+.step:last-child:before{display:none}
+.step .dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--accent);background:var(--card);margin-top:4px}
+.step b{display:block}
+.step span{font-size:.93rem;color:var(--muted)}
+.jobs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.job{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.job .k{font:500 .72rem var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.job b{font-family:var(--f-display);font-size:1.05rem;line-height:1.2}
+.job p{font-size:.9rem}
+.job .q{font-size:.85rem;color:var(--muted)}
+.tablewrap{overflow-x:auto;background:var(--card);border:1px solid var(--line);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{padding:7px 12px;text-align:right;border-bottom:1px solid var(--grid);font-variant-numeric:tabular-nums;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{font:500 .75rem var(--f-mono);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+tfoot td{font-weight:700;border-bottom:0}
+ul.src{margin:0;padding-left:1.2em;font-size:.88rem;color:var(--muted);display:flex;flex-direction:column;gap:4px;overflow-wrap:anywhere}
+a{color:var(--accent)}
+@media (max-width:760px){.facts,.facts.three,.jobs{grid-template-columns:1fr 1fr}.cat{grid-template-columns:1fr}.ex{grid-column:1}.sem{grid-template-columns:1fr}.mods{flex-wrap:wrap}.mod{flex:1 1 40%!important}.milestone{margin-left:0}h1{font-size:1.8rem}}
+@media (max-width:460px){.facts,.facts.three,.jobs{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){.track span{transition:width .35s ease}}
+</style>
+
+<div class="wrap" lang="de">
+<header>
+  <span class="eyebrow">Waldland · Recherche · Stand 01.10.2026</span>
+  <h1>Forstwirtschaft in Rottenburg: Was drankommt und wohin es führt</h1>
+  <p>Der B.Sc. Forstwirtschaft an der Hochschule für Forstwirtschaft Rottenburg (HFR), Modulhandbuch Version 4, gültig ab Jahrgang 2025/26. Jedes Modul ist nach seinen ECTS-Punkten einem von elf Themenbereichen zugeordnet. 1 ECTS entspricht etwa 30 Stunden Arbeit.</p>
+  <div class="facts">
+    <div class="fact"><span class="n">7</span><span>Semester, Beginn nur im Wintersemester</span></div>
+    <div class="fact"><span class="n">210</span><span>ECTS, davon 20 als Wahlpflicht</span></div>
+    <div class="fact"><span class="n">18</span><span>Wochen Praxissemester im 5. Semester</span></div>
+    <div class="fact"><span class="n">1</span><span>Jagdschein inklusive (gleichgestellter Nachweis)</span></div>
+  </div>
+</header>
+
+<section aria-labelledby="h-chart">
+  <h2 id="h-chart">Themenbereiche</h2>
+  <div class="controls">
+    <div class="seg" role="group" aria-label="Einheit">
+      <button id="b-pct" aria-pressed="true">Anteil in %</button><button id="b-ects" aria-pressed="false">ECTS absolut</button>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--s-p)"></i>Pflichtmodule</span>
+      <span><i style="background:var(--s-w)"></i>Wahlpflicht (angenommene Wahl)</span>
+    </div>
+  </div>
+  <div class="chart" id="chart"></div>
+  <p class="note">Die Zuordnung der Module zu den Themenbereichen stammt von mir. Für die 20 Wahlpflicht-ECTS ist eine typische Wahl angenommen: Wirtschaftsführung, Naturschutz und Landschaftsmanagement, Open-Source-GIS und Fernerkundung sowie Holzmarkt. Mit anderer Wahl verschieben sich diese Balken.</p>
+</section>
+
+<section aria-labelledby="h-plan">
+  <h2 id="h-plan">Der Stundenplan, Semester für Semester</h2>
+  <p>Jede Kachel ist ein Modul bzw. eine Lehrveranstaltung; die Breite entspricht den ECTS. Gestrichelt sind Wahlpflichtplätze.</p>
+  <div class="plan" id="plan"></div>
+</section>
+
+<section aria-labelledby="h-spec">
+  <h2 id="h-spec">Was dieses Studium besonders macht</h2>
+  <div class="facts three">
+    <div class="fact"><b>Praxissemester</b><span>Mindestens 18 Wochen und 90 Präsenztage. Die Stelle suchst du selbst: Forstbetrieb, Holzwirtschaft, Naturschutzbehörde oder eine andere fachnahe Stelle, auch im Ausland. Am Ende schreibst du einen Bericht.</span></div>
+    <div class="fact"><b>Jagdschein im Studium</b><span>Wer die Bachelorvorprüfung nach dem 2. Semester samt Jagdfächern besteht und Waffensachkunde, Schießnachweis und Jagdpraxis nachweist, erhält einen der Jägerprüfung gleichgestellten Nachweis. Für das Traineeprogramm ist der Jagdschein Pflicht.</span></div>
+    <div class="fact"><b>Viel Technik und Holz</b><span>Waldarbeit und Arbeitssicherheit, Harvester und Forwarder, Seilkran, Rundholzsortierung, Hiebskalkulation, Wegebau. Rund ein Siebtel des Studiums dreht sich um Holz und Technik.</span></div>
+  </div>
+  <h3>Wahlpflichtangebot (4 Module à 5 ECTS, oder ein flexibles 10er-Modul)</h3>
+  <div class="chips" id="wahl"></div>
+</section>
+
+<section aria-labelledby="h-path">
+  <h2 id="h-path">Der Hauptweg: Revierleitung in Baden-Württemberg</h2>
+  <div class="lane">
+    <div class="step"><i class="dot"></i><div><b>B.Sc. Forstwirtschaft, Rottenburg</b><span>7 Semester. Andere forstliche Bachelor werden für den Dienst in Baden-Württemberg ebenfalls anerkannt.</span></div></div>
+    <div class="step"><i class="dot"></i><div><b>Traineeprogramm Forst (gehobener Dienst), 104 Wochen ab 1. Juli</b><span>Ausbildungsphase von 52 Wochen: 26 Wochen Revierdienst, 12 Wochen Innendienst, 6 Wochen Pflichtlehrgänge, 4 Wochen Wahllehrgänge und 4 Wochen Hospitation, z. B. bei der FVA oder einem Privatbetrieb. Danach 52 Wochen Praxisphase mit mehr Verantwortung. Voraussetzung sind Jagdschein, Führerschein Klasse B und ein eigenes Auto. Ausbildungsstellen sind ForstBW, Landkreise und Kommunen. ForstBW nimmt 5–15 Trainees pro Jahr und zahlt EG 10 TVöD.</span></div></div>
+    <div class="step"><i class="dot"></i><div><b>Laufbahnprüfung</b><span>Schriftlich und mündlich im Wald („Waldprüfung“), je zur Hälfte gewertet. Seit 2024 bundesweit anerkannt, damit ist auch ein Wechsel in andere Bundesländer möglich.</span></div></div>
+    <div class="step"><i class="dot"></i><div><b>Revierleitung (A 11)</b><span>Bei ForstBW im Staatswald, bei einer der 46 unteren Forstbehörden an den Landratsämtern oder direkt bei einer Kommune. Später z. B. Büroleitung an der unteren Forstbehörde (A 12–A 13) oder eine Fachstelle für Waldnaturschutz, Förderung oder Wildtiere.</span></div></div>
+  </div>
+  <p class="note">Weiterkommen nach oben: Die HFR bietet einen konsekutiven, akkreditierten M.Sc. Forstwirtschaft an. Ein solcher Master kann in Baden-Württemberg grundsätzlich den Zugang zum höheren Dienst öffnen; die Länder prüfen das im Einzelfall.</p>
+</section>
+
+<section aria-labelledby="h-jobs">
+  <h2 id="h-jobs">Weitere Berufe mit diesem Abschluss</h2>
+  <div class="jobs" id="jobs"><p class="note">Die Recherche zu den Berufswegen läuft noch.</p></div>
+</section>
+
+<section aria-labelledby="h-table">
+  <h2 id="h-table">Alle Zahlen</h2>
+  <div class="tablewrap"><table id="tbl"><thead><tr><th>Themenbereich</th><th>Pflicht</th><th>Wahl</th><th>Gesamt</th><th>%</th></tr></thead><tbody></tbody><tfoot></tfoot></table></div>
+</section>
+
+<section aria-labelledby="h-src">
+  <h2 id="h-src">Quellen</h2>
+  <ul class="src" id="src">
+    <li>HFR Rottenburg, Modulhandbuch B.Sc. Forstwirtschaft Version 4: <a href="https://www.hs-rottenburg.net/fileadmin/user_upload/Studiengaenge/Forstwirtschaft/Modulhandbuecher-StuPo/Modulhandbuch_Forst_Version4.pdf">hs-rottenburg.net</a></li>
+    <li>HFR Rottenburg, Studien- und Prüfungsordnung Bachelor vom 23.01.2026: <a href="https://www.hs-rottenburg.net/fileadmin/user_upload/Studiengaenge/alle/Modulhandbuecher-StuPo/StuPo_Bachelor_23-01-2026.pdf">hs-rottenburg.net</a></li>
+    <li>HFR Rottenburg, M.Sc. Forstwirtschaft, häufige Fragen: <a href="https://www.hs-rottenburg.net/studium/msc-forstwirtschaft/infos-ueber-den-studiengang/haeufige-fragen/">hs-rottenburg.net</a></li>
+    <li>Qualifizierungs- und Prüfungsordnung gehobener technischer Forstdienst, Gesetzblatt BW 2023 Nr. 14: <a href="https://www.landtag-bw.de/resource/blob/214478/11fe3c2c108af2400c5b327e25d909f3/GBl202314.pdf">landtag-bw.de</a></li>
+    <li>ForstBW, Traineeprogramm und FAQ: <a href="https://www.forstbw.de/ueber-uns/karriere/ausbildung-und-praktika/trainee/faq-ein-traineeprogramm-bei-forstbw">forstbw.de</a></li>
+    <li>Landesforstverwaltung, Berufe und Karriere: <a href="https://waldportal-bw.de/de/p/uber-uns/berufe-und-karriere-257.html">waldportal-bw.de</a></li>
+  </ul>
+</section>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+(function(){
+// [Name, Untertitel, Pflicht-ECTS, Wahl-ECTS, Beispiele]
+const cats=[
+ ["Holz, Forsttechnik & Holzernte","Holzernte, Maschinen, Logistik",29,0,"Waldarbeit und Arbeitssicherheit, Harvester und Forwarder, Rundholzsortierung, Hiebskalkulation, Wegebau, Seilkran, Holzverwendung"],
+ ["Praxis","Praxissemester",30,0,"18 Wochen in einem Betrieb deiner Wahl, mit Bericht"],
+ ["Naturwiss. Grundlagen","Botanik, Boden, Klima, Statistik",26,0,"Botanik mit Gehölzbestimmung, Zoologie, Gesteins- und Bodenkunde, Klimatologie, Standortsökologie, Statistik"],
+ ["Waldbau, Waldwachstum & Planung","Waldbau, Inventur, Forsteinrichtung",25,0,"Waldbau 1 und 2, Bestandesbeschreibung, Waldinventur, Baumartenwahl, Forsteinrichtungsprojekt"],
+ ["Ökonomie, Betrieb & Holzmarkt","Rechnungswesen, Bewertung",12,10,"Buchführung, Kosten- und Investitionsrechnung, öffentliche Finanzen, Waldbewertung, Holzvertrieb"],
+ ["Recht, Politik & Gesellschaft","Recht, Kommunikation, Führung",20,0,"Waldrecht und Waldpolitik, Raumordnung, Kommunikation, Waldpädagogik, Personalführung"],
+ ["Ökologie & Naturschutz","Naturschutz, Biodiversität",10,5,"Umwelt- und Naturschutz, Waldnaturschutz, Störungsökologie und Biodiversität"],
+ ["Methoden & Digitales","GIS, Karten, Fernerkundung",9,5,"Kartenkunde und GNSS, GIS, wissenschaftliches Arbeiten"],
+ ["Wild & Jagd","Wildbiologie, Jagdwirtschaft",9,0,"Wildbiologie und Wildökologie, Waffen und Ballistik, Jagdwirtschaft und Jagdbetriebslehre"],
+ ["Waldschutz","Insekten, Pilze, Schäden",8,0,"Schadinsekten und ihre Gegenspieler, Pilze, Wildschäden, abiotische Schäden, Pflanzenschutz-Sachkunde"],
+ ["Abschlussarbeit","Bachelorarbeit",12,0,"Bachelorarbeit, 3 Monate"]
+];
+const TOT=210;let mode='pct';
+const chart=document.getElementById('chart'),tip=document.getElementById('tip');
+const fmt=n=>(Math.round(n*10)/10).toLocaleString('de-DE');
+function render(){
+  const k=mode==='pct'?100/TOT:1;const max=Math.max(...cats.map(c=>c[2]+c[3]))*k;const u=mode==='pct'?' %':' ECTS';
+  chart.innerHTML='';
+  cats.forEach(c=>{const p=c[2]*k,w=c[3]*k;
+    const row=document.createElement('div');row.className='cat';
+    row.innerHTML=`<div class="name">${c[0]}<small>${c[1]}</small></div>
+    <div class="bar" data-t="${c[0]}: ${c[2]} ECTS Pflicht${c[3]?' + '+c[3]+' ECTS Wahl':''} · ${fmt((c[2]+c[3])/TOT*100)} % von 210"><div class="track" style="width:calc((100% - 5.5em) * ${(p+w)/max})"><span style="flex:${p} 0 0;background:var(--s-p)"></span>${w?`<span style="flex:${w} 0 0;background:var(--s-w)"></span>`:''}</div><span class="v">${fmt(p+w)}${u}</span></div>
+    <div class="ex">${c[4]}</div>`;
+    chart.appendChild(row)});
+}
+chart.addEventListener('mousemove',e=>{const b=e.target.closest('.bar');if(!b){tip.hidden=true;return}tip.textContent=b.dataset.t;tip.hidden=false;tip.style.left=Math.min(e.clientX+14,innerWidth-310)+'px';tip.style.top=(e.clientY+14)+'px'});
+chart.addEventListener('mouseleave',()=>tip.hidden=true);
+const bp=document.getElementById('b-pct'),be=document.getElementById('b-ects');
+bp.onclick=()=>{mode='pct';bp.setAttribute('aria-pressed','true');be.setAttribute('aria-pressed','false');render()};
+be.onclick=()=>{mode='ects';be.setAttribute('aria-pressed','true');bp.setAttribute('aria-pressed','false');render()};
+render();
+
+// Stundenplan: [Name, ECTS, Typ] Typ: ''=Pflicht, 'w'=Wahlpflicht, 'big'=Praxis/Thesis
+const sem=[
+ [["Zoologie, Wildbiologie",7],["Klima, Gestein, Boden I",6],["Botanik I",4],["Kartenkunde, Inventur",4],["BWL-Grundlagen",3],["Umweltschutz",2],["Wiss. Arbeiten",2],["Waldbau&shy;grundlagen",2],["Jagd 1: Waffen",1]],
+ [["Waldarbeit, Forsttechnik 1",5],["Naturschutz, Waldnatur&shy;schutz",4],["Jagdwirtschaft 2",4],["Waldschutz 1",4],["Statistik",3],["Botanik II: Gehölze",3],["Bestandes&shy;beschreibung",3],["Bodenkunde II Gelände",3]],
+ [["Standort, Baumart, Klimawandel",8],["Rundholz&shy;verwendung",6],["Waldbau 1",5],["Holzernte, Harvester",5],["GIS",4],["Kommuni&shy;kation",4]],
+ [["Forstnutzung, Wegebau",7],["Wald und Gesellschaft: Recht",6],["Rechnungs&shy;wesen",5],["Waldbau 1",4],["Waldschutz 2",4],["Wald&shy;pädagogik",2]],
+ [["Praxissemester: 18 Wochen im Betrieb",30,"big"]],
+ [["Holzbereitstellung, Digitalisierung",7],["Landnutzungs&shy;politik",6],["Wahlpflicht",5,"w"],["Wahlpflicht",5,"w"],["Personal&shy;führung",3],["Waldbau 2",3],["Forst&shy;einrichtung",3]],
+ [["Bachelorarbeit",12,"big"],["Wahlpflicht",5,"w"],["Wahlpflicht",5,"w"],["Waldbau 2",3],["Wald&shy;bewertung",3]]
+];
+const plan=document.getElementById('plan');
+sem.forEach((s,i)=>{const sum=s.reduce((a,m)=>a+m[1],0);
+  plan.insertAdjacentHTML('beforeend',`<div class="sem"><div class="lab"><b>${i+1}. Sem.</b>${sum} ECTS</div><div class="mods">${s.map(m=>`<div class="mod ${m[2]||''}" style="flex:${m[1]} 1 0">${m[0]}<i>${m[1]}</i></div>`).join('')}</div></div>`);
+  if(i===1)plan.insertAdjacentHTML('beforeend','<div class="milestone">↳ Bachelorvorprüfung, danach Jagdschein-Nachweis möglich</div>');
+});
+
+const wahl=["Wald im Dialog","Wirtschaftsführung","Bodenmanagement","Klimarelevanz Forst und Holz","Naturschutz und Landschaftsmanagement","Ökosystemleistungen und Ökobilanz","Wildtiere und Gesellschaft","GIS-Analysen","Umweltgutachten","Angewandte Vegetationskunde","Open-Source-GIS und Fernerkundung","Strukturelementanalyse","Arboristik und Forstpflanzen","Pilze im Waldökosystem","Forstgeschichte und globale Waldpolitik","Agrarökologie und Regionalentwicklung","Holzmarkt und Unternehmensführung","Projektmanagement"];
+document.getElementById('wahl').innerHTML=wahl.map(w=>`<span>${w}</span>`).join('');
+
+const tb=document.querySelector('#tbl tbody');let sp=0,sw=0;
+cats.forEach(c=>{sp+=c[2];sw+=c[3];tb.insertAdjacentHTML('beforeend',`<tr><td>${c[0]}</td><td>${c[2]}</td><td>${c[3]}</td><td>${c[2]+c[3]}</td><td>${fmt((c[2]+c[3])/TOT*100)}</td></tr>`)});
+document.querySelector('#tbl tfoot').innerHTML=`<tr><td>Summe</td><td>${sp}</td><td>${sw}</td><td>${sp+sw}</td><td>100</td></tr>`;
+})();
+</script>
