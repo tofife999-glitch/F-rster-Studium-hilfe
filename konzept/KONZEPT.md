@@ -62,5 +62,6 @@ Dieses Dokument hält fest, was bereits entschieden ist. Offene Punkte stehen am
 - [x] Modulhandbuch Rottenburg ausgewertet → `studium-rottenburg.html`
 - [x] Laufbahn in BW geklärt: kein Anwärterjahr, sondern das 24-monatige **Traineeprogramm Forst** mit Laufbahnprüfung
 - [ ] Berufsliste mit Forstwirtschaft-Abschluss recherchieren, jeweils mit nötigen Zusatzqualifikationen (läuft)
-- [ ] Kernschleife ausformulieren: Was tust du in einer typischen Spielstunde?
-- [ ] Technik festlegen (Browser-Spiel auf dem PC)
+- [x] Startort: Schönbuch · Rolle: erst Praktikant/in · Spielsprache: Deutsch · Spieltag: 20–30 Minuten
+- [x] Technik: Browser-Spiel (HTML/JavaScript), lokal per Doppelklick spielbar
+- [ ] Kernschleife und Umfang von Prototyp v0.1 bestätigen → `KERNSCHLEIFE.md`
