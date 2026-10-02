@@ -73,9 +73,11 @@ body { font: 17px/1.45 var(--f-text); color: var(--tinte); }
 /* Fotos */
 .fotos { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; margin: 8px 0 12px; }
 .fotos.zwei { grid-template-columns: 1fr 1fr; }
+.fotos.zwei img { aspect-ratio: 16 / 10; max-height: 34vh; }
 .fotos figure { margin: 0; background: #fffaf0; border: 2px solid #d4c6a2; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; }
 .fotos img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; background: #d8ccad; cursor: zoom-in; }
-.fotos figcaption { font-size: 12.5px; padding: 3px 7px; color: var(--tinte2); display: flex; justify-content: space-between; gap: 6px; }
+.fotos figcaption { font-size: 12.5px; padding: 3px 7px; color: var(--tinte2); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0 6px; }
+.fotos figcaption span { font-weight: 500; }
 .fotos figcaption i { font-style: normal; opacity: .75; }
 .foto-fehlt { aspect-ratio: 4 / 3; display: grid; place-items: center; color: #8a7a5a; font-size: 13px; background: repeating-linear-gradient(45deg, #ece2c6 0 8px, #e4d8b8 8px 16px); }
 .grossfoto { position: fixed; inset: 0; background: rgba(0,0,0,.85); display: grid; place-items: center; z-index: 5; cursor: zoom-out; padding: 20px; }
