@@ -5,7 +5,7 @@
 - **Ort:** ein Revier im **Schönbuch** (Naturpark zwischen Tübingen, Herrenberg und Böblingen, direkt bei Rottenburg). Das Revier ist ein vereinfachter Ausschnitt; echte Orte wie Bebenhausen oder das Schaichtal kommen als Bezugspunkte vor. Ortsdetails werden vor dem Einbau geprüft.
 - **Sprache:** Deutsch, mit den echten Fachbegriffen.
 - **Rolle und Aufstieg:**
-  1. Praktikant/in im Revier, begleitet von der Revierleiterin als Mentorin
+  1. Praktikant/in im Revier, begleitet vom Revierleiter Martin Bühler als Mentor. Mit deinem Aufstieg tritt er nach und nach zurück und geht schließlich in den Ruhestand, du übernimmst sein Revier.
   2. Student/in: Die Studienplan-Brille wird freigeschaltet.
   3. Trainee
   4. Revierleitung
@@ -31,13 +31,13 @@
 
 - **Jeder Wissenseintrag hat vier Stufen:** unbekannt → gesehen → gelernt → sicher.
 - **Wiederholungen** tauchen als normale Ereignisse in der Welt auf, in wachsenden Abständen (Spaced Repetition).
-- **Fehler:** Es gibt kein „Game Over“. Bei Fehlern leidet ein wenig der Wald oder das Vertrauen der Mentorin, und du bekommst immer die Erklärung dazu.
+- **Fehler:** Es gibt kein „Game Over“. Bei Fehlern leidet ein wenig der Wald oder das Vertrauen des Mentors, und du bekommst immer die Erklärung dazu.
 
 ## Prototyp v0.1 (Umfang)
 
 - **Welt:** ein kleiner Revierausschnitt im Schönbuch. Du kannst draußen herumlaufen und zur Forstkarte herauszoomen.
 - **5 Baumarten** mit echten Fotos (Baum, Blatt/Nadel, Rinde, Knospe, Frucht): Rotbuche, Traubeneiche, Hainbuche, Fichte, Waldkiefer.
-- **Figuren:** 3, nämlich die Mentorin, eine Spaziergängerin und ein Waldarbeiter.
+- **Figuren:** 3, nämlich Revierleiter Bühler, eine Wanderin und Forstwirt Krauß. Die Spielfigur ist fest und blond.
 - **Spielumfang:** ein spielbarer Tag mit Posteingang, Aufträgen, Feldbuch und Tagesbericht.
 - **Speicherstand:** wird automatisch gespeichert.
 

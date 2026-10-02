@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waldland – Ein Revier im Schönbuch</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;1,500&family=Alegreya+Sans:wght@400;500;700&family=Pixelify+Sans:wght@500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="spiel">
+  <canvas id="welt"></canvas>
+
+  <div id="hud-links" class="hud">
+    <div class="hud-tag" id="hud-tag">Tag 1</div>
+    <div class="hud-zeile" id="hud-rang">Praktikant/in</div>
+    <div class="hud-zeile" id="hud-ort">Schönbuch</div>
+  </div>
+
+  <div id="hud-auftraege" class="hud">
+    <div class="hud-titel">Aufträge</div>
+    <ol id="auftragsliste"></ol>
+  </div>
+
+  <div id="hinweis" hidden></div>
+  <div id="toast" hidden></div>
+
+  <div id="knoepfe">
+    <button id="k-karte" title="Forstkarte (M)"><span>M</span>Karte</button>
+    <button id="k-buch" title="Wissensbuch (B)"><span>B</span>Wissensbuch</button>
+    <button id="k-hilfe" title="Steuerung (H)"><span>H</span>Hilfe</button>
+  </div>
+
+  <div id="overlay" hidden><div id="panel"></div></div>
+  <div id="laden"><div>Waldland</div><p>Der Wald wird gezeichnet …</p></div>
+</div>
+
+<script src="js/util.js"></script>
+<script src="daten/wissen.js"></script>
+<script src="daten/fotos.js" onerror="window.FOTOS={}"></script>
+<script src="js/sprites.js"></script>
+<script src="js/welt.js"></script>
+<script src="js/karte.js"></script>
+<script src="js/lernen.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/spiel.js"></script>
+</body>
+</html>
